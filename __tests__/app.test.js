@@ -16,6 +16,31 @@ describe('app routes', () => {
       .send('k whatever')
       .then(response => {
         expect(response.text).toEqual('k whatever');
+        expect(response.status).toEqual(200);
+      });
+  });
+
+  it('handles a GET /red route', () => {
+    return request(app)
+      .get('/red')
+      .then(response => {
+        expect(response.text).toEqual('<h1>red</h1>');
+      });
+  });
+
+  it('handles a GET /green route', () => {
+    return request(app)
+      .get('/green')
+      .then(response => {
+        expect(response.text).toEqual('<h1>green</h1>');
+      });
+  });
+
+  it('handles a GET /blue route', () => {
+    return request(app)
+      .get('/blue')
+      .then(response => {
+        expect(response.text).toEqual('<h1>blue</h1>');
       });
   });
 });
