@@ -24,7 +24,7 @@ describe('app routes', () => {
     return request(app)
       .get('/red')
       .then(response => {
-        expect(response.text).toEqual('<h1>red</h1>');
+        expect(response.text).toEqual('<h1 style=color:red>red</h1>');
       });
   });
 
@@ -32,7 +32,7 @@ describe('app routes', () => {
     return request(app)
       .get('/green')
       .then(response => {
-        expect(response.text).toEqual('<h1>green</h1>');
+        expect(response.text).toEqual('<h1 style=color:green>green</h1>');
       });
   });
 
@@ -40,7 +40,7 @@ describe('app routes', () => {
     return request(app)
       .get('/blue')
       .then(response => {
-        expect(response.text).toEqual('<h1>blue</h1>');
+        expect(response.text).toEqual('<h1 style=color:blue>blue</h1>');
       });
   });
 });
